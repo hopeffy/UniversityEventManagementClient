@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './pages/events/events/events.component';
 
 const routes: Routes = [
+  {
+    path : '',
+    component : EventsComponent
+  }
 ];
 
 @NgModule({

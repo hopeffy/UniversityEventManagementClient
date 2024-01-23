@@ -58,6 +58,7 @@ import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
   exports: [
+    
     CommonModule,
     MatAutocompleteModule,
         MatBadgeModule,

@@ -44,8 +44,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-
-
+import { NavbarComponent } from './components/navbar/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -54,9 +54,12 @@ import { MatTreeModule } from '@angular/material/tree';
     EventCreateDialogComponent,
     EventDeleteDialogComponent,
     EventUpdateDialogComponent,
+    NavbarComponent,
 
   ],
   imports: [
+    BrowserAnimationsModule,
+    AppRoutingModule,
     BrowserModule,
     MatAutocompleteModule,
     MatBadgeModule,
