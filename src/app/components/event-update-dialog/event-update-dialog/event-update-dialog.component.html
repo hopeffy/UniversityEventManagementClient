@@ -1,1 +1,62 @@
-<p>event-update-dialog works!</p>
+<h1 mat-dialog-title>Event Details</h1>
+
+<div mat-dialog-content>
+    <div class="row">
+       <mat-form-field> 
+        <mat-label>Name</mat-label>
+        <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
+       </mat-form-field> 
+    </div>
+    <div class="row">
+            
+            <mat-form-field class="col-6">
+              <mat-label>START DATE</mat-label>
+              <input matInput [matDatepicker]="picker1" [value]="date.value">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          
+          
+            <mat-form-field class="col-6">
+                <mat-label>END DATE</mat-label>
+                <input matInput [matDatepicker]="picker2" [value]="date.value">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+          
+
+        
+     </div>
+
+     <div class="row">
+        <mat-form-field> 
+            <mat-label>Location</mat-label>
+            <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
+           </mat-form-field> 
+     </div>
+     <div class="row">
+        <mat-form-field> 
+            <mat-label>Provider</mat-label>
+            <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
+           </mat-form-field> 
+     </div>
+     <div class="row">
+        <mat-form-field> 
+            <mat-label>Description</mat-label>
+            <textarea matInput ngDefaultControl required></textarea>
+        </mat-form-field> 
+     </div>
+
+     <mat-divider></mat-divider>
+     <div mat-dialog-actions class="button">
+        <button mat-flat-button mat-dialog-close>Close</button>
+        <button mat-flat-button color="primary" ngbTooltip="Upload">
+          Save
+         
+        </button>
+
+
+    </div>
+</div>
