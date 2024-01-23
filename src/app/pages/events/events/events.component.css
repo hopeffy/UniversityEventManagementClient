@@ -1,0 +1,21 @@
+.button {
+    
+    align-items: center;
+    /* justify-content: end; */
+    width: 30%;
+}
+
+.navbar-bottom {
+    margin-top: 10px;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    
+}
+
+.toggle {
+    width: 70%;
+    
+}

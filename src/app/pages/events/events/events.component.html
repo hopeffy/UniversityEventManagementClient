@@ -1,1 +1,18 @@
-<p>events works!</p>
+<app-navbar></app-navbar>
+<div class="row navbar-bottom">
+    
+
+
+<div class="toggle">
+    <mat-button-toggle-group #backgroundColorToggle="matButtonToggleGroup"
+                             value="active"
+                             aria-label="Change color">
+      <mat-button-toggle value="active">Active</mat-button-toggle>
+      <mat-button-toggle value="inavtice">Inactive</mat-button-toggle>
+    </mat-button-toggle-group>
+    
+</div>
+
+<button class="button" mat-raised-button color="primary"><mat-icon>add</mat-icon> Add Event</button>
+
+</div>
