@@ -1,7 +1,7 @@
 import { Base } from "./Base";
 import { Person } from "./Person";
 
-export interface Events extends Base{
+export interface Events extends Base,Person{
     name : string,
     start_date : Date,
     end_date : Date,

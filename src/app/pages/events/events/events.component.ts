@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../../components/navbar/navbar/navbar.component';
+import { Events } from '../../../interfaces/Events';
 
 @Component({
   selector: 'app-events',
@@ -7,5 +8,10 @@ import { NavbarComponent } from '../../../components/navbar/navbar/navbar.compon
   styleUrl: './events.component.css'
 })
 export class EventsComponent {
+  
 
+  constructor() {
+    
+  }
+  
 }
