@@ -28,6 +28,7 @@
     @media(max-width:767px){
         max-width: 50%;
     }
+
     @media(min-width:768px){
         max-width: 30%;
     }
@@ -44,10 +45,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media(max-width:800px){
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
   }
 
   .date-content {
     display: flex;
     flex-direction: column;
     overflow: auto;
+    padding-right: 20px;
+    @media(max-width:767px){
+        padding-bottom : 10px;
+        
+    }
+
   }
