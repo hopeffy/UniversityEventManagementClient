@@ -21,7 +21,10 @@ export class EventsComponent {
   currentDate = new Date();
   currentDate2 = new Date();
   date = new FormControl(new Date());
-  events : any[] = [];
+  events : Events[] = [];
+  filterEvents : any[] = [];
+  searchTerm = "";
+  isActive: boolean = true;
 
   eventObj : Partial<Events> =  {
     name : "",
@@ -76,11 +79,13 @@ export class EventsComponent {
   }
 
   getAllEvents() {
+    debugger
     this.eventService.getAllEvent().subscribe({
       next: (response) => {
         console.log("succesful");
         if(response != undefined) {
           this.events = response;
+          
         }
       },
       error : (error) => {

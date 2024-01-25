@@ -18,9 +18,9 @@ export class EventService {
     return this.http.post<void>('http://localhost:5281/api/Event' , model);
   }
 
-  getAllEvent() : Observable<void> {
+  getAllEvent() : Observable<Events[]> {
     debugger
-    return this.http.get<void>(`${this.baseUrl}`);
+    return this.http.get<Events[]>(`${this.baseUrl}`);
   }
 
   getEventById(id : string) : Observable<void>{
