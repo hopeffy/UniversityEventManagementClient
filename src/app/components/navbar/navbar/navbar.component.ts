@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { EventsComponent } from '../../../pages/events/events/events.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,17 @@ import { EventsComponent } from '../../../pages/events/events/events.component';
 })
 export class NavbarComponent {
 
+    constructor(
+      private router : Router) {
+
+    }
+
+    routerToEventsPage() {
+    this.router.navigate(['events']);
+  }
+  routerToPersonPage() {
+    this.router.navigate(['person']);
+  }
 
 
 }

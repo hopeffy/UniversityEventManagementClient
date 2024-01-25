@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<div class="row navbar-bottom">
+    
+
+
+    <div class="toggle">
+        <mat-button-toggle-group #backgroundColorToggle="matButtonToggleGroup"
+                                 value="active"
+                                 aria-label="Change color">
+          <mat-button-toggle value="active">Active</mat-button-toggle>
+          <mat-button-toggle value="inavtice">Inactive</mat-button-toggle>
+        </mat-button-toggle-group>
+        
+    </div>
+    
+    <button class="button" mat-raised-button color="primary" (click)="openDialog()"><mat-icon>add</mat-icon> Add People</button>
+    
+    </div>
+    
+    <div class="cards">
+      <mat-card class="example-card">
+        
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>
+              <p>Status</p>
+              
+            </mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+    
+        <mat-card-content class="card-content">
+          
+            <p>Role</p>
+    
+        </mat-card-content>
+    
+    
+      </mat-card>
+        
+    </div>

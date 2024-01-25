@@ -46,6 +46,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
+import { PersonComponent } from './pages/person/person/person.component';
+import { PersonCreateDialogComponent } from './components/person-create-dialog/person-create-dialog/person-create-dialog.component';
+import { PersonDeleteDialogComponent } from './components/person-delete-dialog/person-delete-dialog/person-delete-dialog.component';
+import { PersonUpdateDialogComponent } from './components/person-update-dialog/person-update-dialog/person-update-dialog.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +60,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EventDeleteDialogComponent,
     EventUpdateDialogComponent,
     NavbarComponent,
+    DashboardComponent,
+    PersonComponent,
+    PersonCreateDialogComponent,
+    PersonDeleteDialogComponent,
+    PersonUpdateDialogComponent,
 
   ],
   imports: [

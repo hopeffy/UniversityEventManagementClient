@@ -1,17 +1,33 @@
-<mat-tab-group class="background" mat-stretch-tabs="false" mat-align-tabs="center">
-    <mat-tab label="Dashboard">
-      
-    </mat-tab>
+<!-- <mat-tab-group class="background" mat-stretch-tabs="false" mat-align-tabs="center">
     
-    <mat-tab label="Events">
+    
+    <mat-tab label="Events" >
       <ng-template mat-tab-label>
         <mat-icon class="tab-icon">date_range</mat-icon>
         Events
       </ng-template>
       
     </mat-tab>
+
+    <mat-tab label="People">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">person</mat-icon>
+        People
+      </ng-template>
+      
+    </mat-tab>
     
-  </mat-tab-group>
+  </mat-tab-group> -->
+
+  <mat-toolbar class="toolbar">
+    <button mat-button color="primary" (click)="routerToEventsPage()">
+      <mat-icon class="tab-icon">date_range</mat-icon>Events</button>
+
+    <button mat-button (click)="routerToPersonPage()">
+      <mat-icon class="tab-icon">person</mat-icon>Person</button>
+  </mat-toolbar>
+
+  
 
 
 
