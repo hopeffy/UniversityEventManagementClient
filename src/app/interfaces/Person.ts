@@ -1,9 +1,13 @@
 import { Base } from "./Base";
 
 export interface Person {
-    id : string,
+    id? : string,
     name : string,
     surname : string,
     role : string,
     createdTime : Date;
+}
+
+export interface People {
+    persons : Person[];
 }

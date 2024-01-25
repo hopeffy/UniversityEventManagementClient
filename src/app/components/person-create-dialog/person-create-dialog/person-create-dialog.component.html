@@ -4,27 +4,31 @@
     <div class="row">
        <mat-form-field> 
         <mat-label>Name</mat-label>
-        <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
+        <input [(ngModel)]="person.name" matInput type="text"  />
        </mat-form-field> 
     </div>
 
      <div class="row">
         <mat-form-field> 
             <mat-label>Surname</mat-label>
-            <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
+            <input  matInput type="text" [(ngModel)]="person.surname" ngDefaultControl required/>
            </mat-form-field> 
      </div>
      <div class="row">
-        <mat-form-field> 
-            <mat-label>Role</mat-label>
-            <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
-           </mat-form-field> 
+           <mat-form-field>
+            <mat-label>Select an role</mat-label>
+            <mat-select [(value)]="person.role">
+              <mat-option>None</mat-option>
+              <mat-option value="student">Student</mat-option>
+              <mat-option value="instructor">Instructor</mat-option>
+            </mat-select>
+          </mat-form-field>
      </div>
 
      <mat-divider></mat-divider>
      <div mat-dialog-actions class="button">
         <button mat-flat-button mat-dialog-close>Close</button>
-        <button mat-flat-button color="primary" ngbTooltip="Upload">
+        <button mat-flat-button color="primary" ngbTooltip="Upload" (click)="createPeople()">
           Save
          
         </button>

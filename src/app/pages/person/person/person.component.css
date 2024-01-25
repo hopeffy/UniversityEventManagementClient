@@ -22,11 +22,17 @@
 
 .cards {
     margin-top : 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    /* justify-content: space-evenly; */
 }
 
 .example-card {
     @media(max-width:767px){
-        max-width: 50%;
+        max-width: 100%;
+        
     }
 
     @media(min-width:768px){
@@ -35,6 +41,8 @@
     
     margin-bottom: 8px;
     overflow: auto;
+    width: -webkit-fill-available;
+    margin-right: 8px;
   }
 
   .card-content {
@@ -63,4 +71,10 @@
         
     }
 
+  }
+
+  .person_icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
   }

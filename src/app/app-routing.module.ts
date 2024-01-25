@@ -7,7 +7,7 @@ import { PersonComponent } from './pages/person/person/person.component';
 const routes: Routes = [
   {
     path : '',
-    component : DashboardComponent,
+    component : EventsComponent,
     
   },
   {

@@ -51,6 +51,8 @@ import { PersonComponent } from './pages/person/person/person.component';
 import { PersonCreateDialogComponent } from './components/person-create-dialog/person-create-dialog/person-create-dialog.component';
 import { PersonDeleteDialogComponent } from './components/person-delete-dialog/person-delete-dialog/person-delete-dialog.component';
 import { PersonUpdateDialogComponent } from './components/person-update-dialog/person-update-dialog/person-update-dialog.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -68,6 +70,8 @@ import { PersonUpdateDialogComponent } from './components/person-update-dialog/p
 
   ],
   imports: [
+    MatInputModule,
+    FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     BrowserModule,
@@ -107,6 +111,7 @@ import { PersonUpdateDialogComponent } from './components/person-update-dialog/p
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    HttpClientModule
       ],
   providers: [
     {
