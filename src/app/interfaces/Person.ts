@@ -1,7 +1,9 @@
 import { Base } from "./Base";
 
-export interface Person extends Base {
+export interface Person {
+    id : string,
     name : string,
     surname : string,
-    role : string;
+    role : string,
+    createdTime : Date;
 }
