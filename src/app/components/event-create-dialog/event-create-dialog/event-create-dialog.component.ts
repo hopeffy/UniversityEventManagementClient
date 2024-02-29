@@ -15,8 +15,8 @@ import { PersonService } from '../../../services/person.service';
 })
 export class EventCreateDialogComponent {
   people : any[] = [];
-  currentDate: Date | undefined = undefined;
-  currentDate2: Date | undefined = undefined;
+  currentDate = new Date();
+  currentDate2 = new Date();
 
   personObj : Person = {
     id: '',
@@ -58,11 +58,10 @@ export class EventCreateDialogComponent {
 
     
   createEvent() {
-    debugger
     this.eventServices.addEvent(this.eventObj).subscribe({
       next: (response) => {
-        console.log("succesful");
         console.log(response);
+        
       },
       error : (error) => {
 
@@ -73,7 +72,6 @@ export class EventCreateDialogComponent {
   getOrganizer() {
       this.personService.getAllPeople().subscribe({
         next: (response) => {
-          console.log("succesful");
           if(response != undefined) {
             this.people = response;
           }

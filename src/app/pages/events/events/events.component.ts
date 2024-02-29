@@ -17,7 +17,6 @@ import { EventService } from '../../../services/event.service';
 })
 
 export class EventsComponent {
-  @ViewChild(MatTable) table: MatTable<Events> | undefined;
   currentDate = new Date();
   currentDate2 = new Date();
   date = new FormControl(new Date());
@@ -26,16 +25,16 @@ export class EventsComponent {
   searchTerm = "";
   isActive: boolean = true;
 
-  eventObj : Partial<Events> =  {
-    name : "",
+  eventObj : Events = {
     id: '',
-    start_date : this.currentDate,
-    end_date : this.currentDate2,
-    status: 'available',
-    location: 'turkey',
+    name: '',
+    start_date: this.currentDate,
+    end_date: this.currentDate,
+    status: '',
+    location: '',
     organizerId: '',
     description: ''
-  }
+  } 
 
   constructor(
     private createDialog: MatDialog,
@@ -44,45 +43,51 @@ export class EventsComponent {
     private updateDialog : MatDialog,
     private eventService : EventService
   ) {
-    
-  }
-
-  ngOnInit() {
     this.getAllEvents();
   }
 
+
+
   openDialog() {
-    const dialog = this.createDialog.open(EventCreateDialogComponent , { data: { table: this.table }} );
+    const dialog = this.createDialog.open(EventCreateDialogComponent );
     dialog.afterClosed().subscribe((response) => {
       this.getAllEvents();
     });
   }
 
   openEvent(id : string) {
-    const dialog = this.updateDialog.open(EventUpdateDialogComponent, { data : {table : this.table} ,  maxHeight: '80%'});
-    console.log(id);
+    debugger
+    const dialog = this.updateDialog.open(EventUpdateDialogComponent, { maxHeight: '80%'});
+
     this.eventService.getEventById(id).subscribe({
       next: (res) => {
-        console.log("succesful");
+        
         if(res != undefined) {
           this.eventObj = res;
+          console.log(this.eventObj);
           
           
         }
       },
       error : (error) => {
-        console.log("not found any people");
+        console.log("not found any event.");
         
       }
     });
+
+    dialog.afterClosed().subscribe(res => {
+      
+      console.log(this.eventObj);
+      
+    });
+
+    
     
   }
 
   getAllEvents() {
-    debugger
     this.eventService.getAllEvent().subscribe({
       next: (response) => {
-        console.log("succesful");
         if(response != undefined) {
           this.events = response;
           

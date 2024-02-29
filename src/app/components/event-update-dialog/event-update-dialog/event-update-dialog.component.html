@@ -4,14 +4,14 @@
     <div class="row">
        <mat-form-field> 
         <mat-label>Name</mat-label>
-        <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
+        <input  matInput type="text" (ngModel)="event.name" ngDefaultControl required/>
        </mat-form-field> 
     </div>
     <div class="row">
             
             <mat-form-field class="col-6">
               <mat-label>START DATE</mat-label>
-              <input matInput [matDatepicker]="picker1" [value]="date.value">
+              <input matInput [matDatepicker]="picker1" [value]="currentDate" (ngModel) = "event.start_date">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
@@ -20,7 +20,7 @@
           
             <mat-form-field class="col-6">
                 <mat-label>END DATE</mat-label>
-                <input matInput [matDatepicker]="picker2" [value]="date.value">
+                <input matInput [matDatepicker]="picker2" [value]="date.value" [min] = "picker1" (ngModel) = "event.end_date">
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
@@ -33,19 +33,23 @@
      <div class="row">
         <mat-form-field> 
             <mat-label>Location</mat-label>
-            <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
+            <input  matInput type="text" (ngModel)="event.location" ngDefaultControl required/>
            </mat-form-field> 
      </div>
      <div class="row">
-        <mat-form-field> 
-            <mat-label>Provider</mat-label>
-            <input  matInput type="text" (ngModel)="eventName" ngDefaultControl required/>
-           </mat-form-field> 
+      <mat-form-field>
+        <mat-label>Select organizer</mat-label>
+        <mat-select [(ngModel)]="event.organizerId">
+          <mat-option matInput *ngFor="let item of people" [value]="item.id">
+            {{item.name}} {{item.surname}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
      </div>
      <div class="row">
         <mat-form-field> 
             <mat-label>Description</mat-label>
-            <textarea matInput ngDefaultControl required></textarea>
+            <textarea matInput ngDefaultControl required (ngModel) = "event.description"></textarea>
         </mat-form-field> 
      </div>
 
